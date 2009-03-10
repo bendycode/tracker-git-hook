@@ -1,0 +1,17 @@
+.h1 tracker-git-hook
+
+---
+
+Use this project so that commit messages pushed to your non-github git server automatically post as comments tied to your Pivotal Tracker stories, and can also change the state of those stories.
+
+This is very handy way to tie your git history to your Pivotal Tracker history.
+
+If your project lives on github, then look at tracker-github-hooks instead.  If your project lives on Lighthouse, then look at lighthouse-git-hooks instead.
+
+I have purposely mimiced, and used code from both those projects, but am starting by stripping the functionality down to its bare essentials first, and will build it back up and add features over time.  If you want to use this, and want some functionality that is not in place yet, then fork away!  It is open source, after all!
+
+---
+
+© 2009 Stephen Anderson (bendycode)
+
+License MIT
