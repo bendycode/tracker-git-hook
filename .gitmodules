@@ -1,0 +1,6 @@
+[submodule "vendor/ruby-pivotal-tracker"]
+	path = vendor/ruby-pivotal-tracker
+	url = git@github.com:bendycode/ruby-pivotal-tracker.git
+[submodule "vendor/grit"]
+	path = vendor/grit
+	url = git://github.com/mojombo/grit.git
