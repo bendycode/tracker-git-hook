@@ -31,7 +31,11 @@ h3. Configure a project
 # edit the new copy of the config directory and its contents.
 ** #TODO: write more here.
 
-h2. Syntax (#TODO)
+h2. Example Usage
+
+# @git commit -am "[Story467593 state:finished] Describe what you changed here."@
+# @git push@
+# Go see how story 467593 on Pivotal Tracker now has the comment, and the changed state
 
 h2. License MIT
 
