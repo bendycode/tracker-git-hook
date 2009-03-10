@@ -16,20 +16,22 @@ h2. Installation and Configuration
 
 h3. Install tracker-git-hook (One Time Only)
 
-* log into your git server, probably as the git user, in git's home directory
-* @git clone git://github.com/bendycode/tracker-git-hook.git@
-* @cd tracker-git-hook@
-* @export TRACKER_GIT_HOOK_HOME=$(pwd)@
-* @git submodule init@
-* @git submodule update@
+# log into your git server, probably as the git user, in git's home directory
+# @git clone git://github.com/bendycode/tracker-git-hook.git@
+# @cd tracker-git-hook@
+# @export TRACKER_GIT_HOOK_HOME=$(pwd)@
+# @git submodule init@
+# @git submodule update@
 
 h3. Configure a project
 
-* cd into your project's hook directory
-* @cp $TRACKER_GIT_HOOK_HOME/hooks/post-receive ./@
-* @cp $TRACKER_GIT_HOOK_HOME/config ./@
-* edit the new copy of post-receive:
+# cd into your project's hook directory
+# @cp $TRACKER_GIT_HOOK_HOME/hooks/post-receive ./@
+# @cp $TRACKER_GIT_HOOK_HOME/config ../@
+# edit the new copy of post-receive:
 ** set TRACKER_GIT_HOOK_HOME to the same directory you set it to when installing tracker-git-hook above.
+# edit the new copy of the config directory and its contents.
+** #TODO: write more here.
 
 ---
 
