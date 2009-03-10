@@ -12,5 +12,6 @@ I have purposely mimiced, and used code from both those projects, but am startin
 
 ---
 
-© 2009 bendycode
 License MIT
+
+© 2009 bendycode
