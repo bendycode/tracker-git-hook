@@ -6,9 +6,9 @@ Use this project so that commit messages pushed to your non-github git server au
 
 This is very handy way to tie your git history to your Pivotal Tracker history.
 
-If your project lives on github, use "tracker-github-hooks":http://github.com/chris/tracker_github_hook.  If you use Lighthouse, then use "lighthouse-git-hooks":http://github.com/bkerley/lighthouse-git-hooks instead.
+If your project lives on github, use "tracker-github-hooks":http://github.com/chris/tracker_github_hook.  If you use Lighthouse, then use "lighthouse-git-hooks":http://github.com/bkerley/lighthouse-git-hooks instead.  Those projects inspired this one.
 
-I have purposely mimiced, and used code from both those projects, but am starting by stripping the functionality down to its bare essentials first, and will build it back up and add features over time.  If you want to use this, and want some functionality that is not in place yet, then fork away!  It is open source, after all!
+I have purposely mimiced, and used code from both those projects, but am starting by stripping the functionality down to its bare essentials, and will build it back up and add features over time.  If you want to use this, and desire functionality not yet in place, then fork away!  It is open source, after all.
 
 ---
 
