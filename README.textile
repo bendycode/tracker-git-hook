@@ -1,4 +1,4 @@
-.h1 tracker-git-hook
+h1. tracker-git-hook
 
 ---
 
