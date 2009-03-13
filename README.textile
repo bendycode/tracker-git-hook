@@ -1,5 +1,11 @@
 h1. tracker-git-hook
 
+h2. Example Usage
+
+# @git commit -am "[Story467593 state:finished] My super duper comment."@
+# @git push@
+# Story 467593 on Pivotal Tracker is now marked finished, and has "My super duper comment".  You git commit has been tied to Pivotal Tracker just like that.
+
 h2. Overview
 
 Use this project so that commit messages pushed to your non-github git server automatically post as comments tied to your Pivotal Tracker stories, and can also change the state of those stories.
@@ -33,12 +39,6 @@ h3. Configure a project
 # @cp -r sample your_project_name@
 # edit your new project config directory.
 ** Note that I have set .gitignore to keep your (and my) project config settings out of github.
-
-h2. Example Usage
-
-# @git commit -am "[Story467593 state:finished] Describe what you changed here."@
-# @git push@
-# Go see how story 467593 on Pivotal Tracker now has the comment, and the changed state
 
 h2. License MIT
 
