@@ -4,7 +4,8 @@ h2. Example Usage
 
 # @git commit -am "[Story467593 state:finished] My super duper comment."@
 # @git push@
-# Story 467593 on Pivotal Tracker is now marked finished, and has "My super duper comment".  You git commit has been tied to Pivotal Tracker just like that.
+
+Story 467593 on Pivotal Tracker is now marked finished, and has "My super duper comment".  You git commit has been tied to Pivotal Tracker just like that.
 
 h2. Overview
 
