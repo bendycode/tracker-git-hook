@@ -5,13 +5,13 @@ TRACKER_GIT_HOOK_HOME = '/home/git/tracker-git-hook'
 PROJECT_NAME = 'your_project_name'
 ####################################################
 
-UNTRACKED_CONFIG_DIRS = TRACKER_GIT_HOOK_HOME + '/untracked_configs'
-CONFIG_DIR = UNTRACKED_CONFIG_DIRS + '/' + PROJECT_NAME
+CONFIG_DIR = TRACKER_GIT_HOOK_HOME + '/project_configs'
+PROJECT_CONFIG_DIR = CONFIG_DIR + '/' + PROJECT_NAME
 
 require TRACKER_GIT_HOOK_HOME + '/lib/tracker/git_hooks'
 include Tracker::GitHooks
 
 old_rev, new_rev, ref = STDIN.read.split(" ")
 
-Configuration.load(CONFIG_DIR)
+Configuration.load(PROJECT_CONFIG_DIR)
 StoryUpdater.new(old_rev, new_rev, ref).parse.send_changes
