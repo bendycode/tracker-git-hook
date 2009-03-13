@@ -35,7 +35,7 @@ module Tracker::GitHooks
       def login(git_user_email)
         nick, user = @@users.find{|k,v| v[:email] == git_user_email}
         raise "user not found: #{git_user_email}" if user.nil?
-        # Can I set ruby-pivotal-tracker values here?
+        @@config[:api_token] = user[:api_token]
         user
       end
 

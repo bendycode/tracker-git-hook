@@ -31,9 +31,10 @@ module Tracker::GitHooks
         story_num = story_hash[:story_number]
         commit = story_hash[:commit]
 
-        Configuration.login(commit.commiter.email)
-        project = Tracker.new(PROJECT_NUMBER, USER_TOKEN)
-
+        Configuration.login(commit.committer.email)
+        project_number = Configuration[:project_number]
+        user_token = Configuration[:api_token]
+        project = Tracker.new(project_number, user_token)
         puts "updating Story#{story_num}"
 
         if story_hash['state']
@@ -42,7 +43,8 @@ module Tracker::GitHooks
           # story[:current_state] = story_hash['state']
           project.update_state(story_num.to_s, story_hash['state'])
         end
-        project.add_comment(story_num, build_message(commit, ref))
+        message = build_message(commit, @ref)
+        project.add_comment(story_num, message)
       end
     end
 
