@@ -6,9 +6,9 @@ Use this project so that commit messages pushed to your non-github git server au
 
 This is very handy way to tie your git history to your Pivotal Tracker history.
 
-If your project lives on github, use "tracker-github-hooks":http://github.com/chris/tracker_github_hook.  If you use Lighthouse, then use "lighthouse-git-hooks":http://github.com/bkerley/lighthouse-git-hooks instead.  Those projects inspired this one.
+If your project lives on github, use "tracker-github-hooks":http://github.com/chris/tracker_github_hook.  If you use Lighthouse, then use "lighthouse-git-hooks":http://github.com/bkerley/lighthouse-git-hooks instead.  Those projects inspired this one, and in all honesty, this project is as much a fork of lighthouse-git-hooks as not.
 
-I have purposely mimiced, and used code from both those projects, but am starting by stripping the functionality down to its bare essentials, and will build it back up and add features over time.  If you want to use this, and desire functionality not yet in place, then fork away!  It is open source, after all.
+If you want to use this, and desire functionality not yet in place, then fork away!  It is open source, after all.
 
 h2. Installation and Configuration
 
@@ -24,12 +24,15 @@ h3. Install tracker-git-hook (One Time Only)
 h3. Configure a project
 
 # cd into your project's hook directory
+** For me, this was in ~git/repositories/project_name/hooks
 # @cp $TRACKER_GIT_HOOK_HOME/hooks/post-receive ./@
-# @cp $TRACKER_GIT_HOOK_HOME/config ../@
 # edit the new copy of post-receive:
 ** set TRACKER_GIT_HOOK_HOME to the same directory you set it to when installing tracker-git-hook above.
-# edit the new copy of the config directory and its contents.
-** #TODO: write more here.
+** set your PROJECT_NAME
+# @cd $TRACKER_GIT_HOOK_HOME/project_configs@
+# @cp -r sample your_project_name@
+# edit your new project config directory.
+** Note that I have set .gitignore to keep your (and my) project config settings out of github.
 
 h2. Example Usage
 
@@ -40,3 +43,4 @@ h2. Example Usage
 h2. License MIT
 
 © 2009 bendycode
+© 2008 Antonin Amand (author of lighthouse git hooks that this is forked from)
