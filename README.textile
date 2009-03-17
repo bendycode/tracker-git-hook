@@ -33,7 +33,9 @@ h3. Configure a project
 # cd into your project's hook directory
 ** For me, this was in ~git/repositories/project_name/hooks
 ** It might also be in ~git/repositories/project_name/.git/hooks
+# @mv post-receive post-receive.original@
 # @cp $TRACKER_GIT_HOOK_HOME/hooks/post-receive.sample ./post-receive@
+** Your file must be executable at this point.
 # edit the new copy of post-receive:
 ** set TRACKER_GIT_HOOK_HOME to the same directory you set it to when installing tracker-git-hook above.
 ** set your PROJECT_NAME
