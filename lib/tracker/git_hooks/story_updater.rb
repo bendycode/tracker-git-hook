@@ -17,10 +17,11 @@ module Tracker::GitHooks
 
     def parse
       @commits.each do |commit|
-        commit.message.scan(/\[Story([0-9]+)\s*(.*?)\]/) do |match|
+        commit.message.scan(/\[Story([0-9]+)\s*(.*?)\]\s*(.*)$/) do |match|
           story_number = match[0]
           params = match[1]
-          @changes << parse_change(commit, story_number, params)
+          comment = match[2]
+          @changes << parse_change(commit, story_number, params, comment)
         end
       end
       self
@@ -30,6 +31,7 @@ module Tracker::GitHooks
       @changes.each do |story_hash|
         story_num = story_hash[:story_number]
         commit = story_hash[:commit]
+        comment = story_hash[:comment]
 
         Configuration.login(commit.committer.email)
         project_number = Configuration[:project_number]
@@ -43,20 +45,20 @@ module Tracker::GitHooks
           # story[:current_state] = story_hash['state']
           project.update_state(story_num.to_s, story_hash['state'])
         end
-        message = build_message(commit, @ref)
+        message = build_message(commit, @ref, comment)
         project.add_comment(story_num, message)
       end
     end
 
     protected
 
-    def build_message(commit, ref)
-      message = commit.message
+    def build_message(commit, ref, comment)
+      message = comment
       message << "\n\ncommit #{commit.id} on #{ref}\n"
     end
 
-    def parse_change(commit, story_number, params)
-      change = {:story_number => story_number.to_i, :commit => commit}
+    def parse_change(commit, story_number, params, comment)
+      change = {:story_number => story_number.to_i, :commit => commit, :comment => comment}
 
       unless params.nil?
         params.scan(/(\w+):(\w+|'.*?')/) do |key, value|
