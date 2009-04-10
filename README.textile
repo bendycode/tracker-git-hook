@@ -43,6 +43,8 @@ h3. Configure a project
 # @cp -r sample your_project_name@
 # edit your new project config directory.
 ** Note that I have set .gitignore to keep your (and my) project config settings out of github.
+# @cd users@
+# copy login\@example.com for each of your users & edit as appropriate
 
 h3. Try it out
 
