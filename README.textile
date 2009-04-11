@@ -22,6 +22,8 @@ h2. Installation and Configuration
 h3. Install tracker-git-hook (One Time Only)
 
 # log into your git server, probably as the git user, in git's home directory
+# If you use Ubuntu, you must have libxml2-dev and libxslt1-dev packages installed (for nokogiri)
+# @sudo gem install hpricot mime-types archive-tar-minitar nokogiri hoe rcov diff-lcs@ (sorry for the giant list o' dependencies!)
 # @git clone git://github.com/bendycode/tracker-git-hook.git@
 # @cd tracker-git-hook@
 # @export TRACKER_GIT_HOOK_HOME=$(pwd)@
