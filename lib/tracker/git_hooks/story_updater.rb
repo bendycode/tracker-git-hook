@@ -54,7 +54,7 @@ module Tracker::GitHooks
 
     def build_message(commit, ref, comment)
       message = comment
-      message << "\n\ncommit #{commit.id} on #{ref}\n"
+      message << "\n\ncommit #{commit.id[0,8]} on #{ref}\n"
     end
 
     def parse_change(commit, story_number, params, comment)
